@@ -49,7 +49,7 @@ class visualizer{
         if(sdl::button("start",400,200,200,100,60,60,60,renderer,font)){
             switch(current_algorithm){
                 case QUICKSORT:
-                    quickSort(array,array[0],array.size()-1);
+                    quickSort(array, 0, array.size() - 1);
                     break;
                 
                 case BUBBLESORT:
