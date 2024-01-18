@@ -3,6 +3,8 @@
 #include <sdl_ttf.h>
 #include <vector>
 #include "sdl_functions.hpp"
+#include "sorting.hpp"
+
 // void shuffle(std::vector<int>&a, int n);
 enum algorithms{
     QUICKSORT,
@@ -13,7 +15,6 @@ enum algorithms{
     STALINSORT,
     MIRACLESORT
 };
-
 
 class visualizer{
 
@@ -31,7 +32,7 @@ class visualizer{
 
     int current_algorithm=QUICKSORT;
 
-    void events(TTF_Font *font);
+    void events();
 
     void draw(TTF_Font *font){
         
@@ -44,7 +45,37 @@ class visualizer{
         // if(sdl::button("stalin sort",100,650,200,100,60,60,60,renderer,font)) current_algorithm=STALINSORT;
         if(sdl::button("miracle sort",100,650,200,100,60,60,60,renderer,font)) current_algorithm=MIRACLESORT;
 
-        // if(sdl::button("shuffle",700,100,200,100,60,60,60,renderer,font)) shuffle(array,array.size());
+        if(sdl::button("shuffle",400,100,200,100,60,60,60,renderer,font)) shuffle(array,array.size());
+        if(sdl::button("start",400,200,200,100,60,60,60,renderer,font)){
+            switch(current_algorithm){
+                case QUICKSORT:
+                    quickSort(array,array[0],array.size()-1);
+                    break;
+                
+                case BUBBLESORT:
+                    bubbleSort(array,array.size());
+                    break;
+
+                case INSERTIONSORT:
+                    insertionSort(array,array.size());
+                    break;
+
+                case SELECTIONSORT:
+                    selectionSort(array,array.size());
+                    break;
+
+                case BOGOSORT:
+                    bogoSort(array,array.size());
+                    break;
+                
+                case MIRACLESORT:
+                    miracleSort(array,array.size());
+                    break;
+
+                default:
+                    break;
+            }
+        }
 
         for(int i:array){
             SDL_Rect num;
@@ -65,14 +96,6 @@ class visualizer{
         SDL_RenderClear(renderer);
     }
 
-    // SDL_Rect rect;
-    // rect.x = 100;
-    // rect.y = 100;
-    // rect.w = 64;
-    // rect.h = 64;
-
-    // SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255); // Set color to red
-    // SDL_RenderFillRect(renderer, &rect); // Draw the rectangle
-};
+}extern app;
 
 

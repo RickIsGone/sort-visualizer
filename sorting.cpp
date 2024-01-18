@@ -12,10 +12,8 @@ bool isSorted(vector<int> &a, int n) {
     return true;
 }
 
-void shuffle(vector<int> &a, int n) {
-    
+void shuffle(std::vector<int> &a, int n) {
     for (int i = 0; i < n; i++){
-        SDL_Delay(1);
         std::swap(a[i], a[rand() % n]);
     }
 }
@@ -53,7 +51,7 @@ void quickSort(vector<int> &arr, int low, int high){
 void bogoSort(vector<int> &a, int n) {
     while (!isSorted(a, n)) {
         SDL_Delay(1);
-        shuffle(a, n);
+        shuffle(a,a.size());
     }
 }
 
@@ -76,8 +74,7 @@ void stalinSort(vector<int> &a, int& n) {
     n = j + 1;
 }
 
-void insertionSort(vector<int> &arr, int n)
-{
+void insertionSort(vector<int> &arr, int n){
     int i, key, j;
     for (i = 1; i < n; i++)
     {

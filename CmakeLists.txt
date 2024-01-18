@@ -5,6 +5,7 @@ include(CTest)
 enable_testing()
 file(GLOB SOURCES   main.cpp 
                     input.cpp 
+                    sorting.cpp
                     sdl_functions.cpp)
 
 file (GLOB HEADERS  class.hpp

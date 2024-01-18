@@ -2,7 +2,7 @@
 #include "class.hpp"
 #include "sdl_functions.hpp"
 
-void visualizer::events(TTF_Font *font){
+void visualizer::events(){
 
     switch(event.type){  
             case SDL_QUIT:

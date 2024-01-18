@@ -72,9 +72,9 @@ bool sdl::button(std::string text, int x,int y,int width, int height,Uint8 r,Uin
             SDL_SetRenderDrawColor(renderer, r-24, g-24, b-24, 255);
             return true;
         }
-        SDL_SetRenderDrawColor(renderer, r-12, g-12, b-12, 255);
+        SDL_SetRenderDrawColor(renderer, r-16, g-16, b-16, 255);
     }
-    SDL_SetRenderDrawColor(renderer, r, g, b, 255);
+    else SDL_SetRenderDrawColor(renderer, r, g, b, 255);
 
     SDL_Rect rect;
     rect.x = x; 
