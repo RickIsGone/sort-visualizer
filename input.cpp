@@ -13,5 +13,4 @@ void visualizer::events(){
                 break;
     }
 
-    
 }

@@ -22,8 +22,8 @@ void mouse_update(){
 
 
 
-void sdl::quick_text(std::string writing, Uint8 r,Uint8 g,Uint8 b,int x,int y,SDL_Renderer* renderer,TTF_Font* font){
-    SDL_Surface* surface = TTF_RenderText_Solid(font, writing.c_str(), {r, g, b}); 
+void sdl::quick_text(std::string writing, Uint8 r,Uint8 g,Uint8 b,int x,int y,SDL_Renderer* renderer){
+    SDL_Surface* surface = TTF_RenderText_Solid(app.font, writing.c_str(), {r, g, b}); 
     SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
     int text_width = surface->w;
     int text_height = surface->h;
@@ -37,10 +37,10 @@ void sdl::quick_text(std::string writing, Uint8 r,Uint8 g,Uint8 b,int x,int y,SD
 }
 
 
-void sdl::v_quick_text(std::string writing, int var, Uint8 r,Uint8 g,Uint8 b,int y,SDL_Renderer* renderer,TTF_Font* font){
+void sdl::v_quick_text(std::string writing, int var, Uint8 r,Uint8 g,Uint8 b,int y,SDL_Renderer* renderer){
 
     std::string text =writing+std::to_string(var);        
-    SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), {r, g, b}); 
+    SDL_Surface* surface = TTF_RenderText_Solid(app.font, text.c_str(), {r, g, b}); 
     SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
     int text_width = surface->w;
     int text_height = surface->h;
@@ -54,7 +54,7 @@ void sdl::v_quick_text(std::string writing, int var, Uint8 r,Uint8 g,Uint8 b,int
 }
 
 
-bool sdl::button(std::string text, int x,int y,int width, int height,Uint8 r,Uint8 g,Uint8 b,SDL_Renderer* renderer,TTF_Font* font){
+bool sdl::button(std::string text, int x,int y,int width, int height,Uint8 r,Uint8 g,Uint8 b,SDL_Renderer* renderer){
 
     mouse_update();
 
@@ -85,7 +85,7 @@ bool sdl::button(std::string text, int x,int y,int width, int height,Uint8 r,Uin
     SDL_RenderFillRect(renderer, &rect);
 
             
-    SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), {0, 0, 0}); 
+    SDL_Surface* surface = TTF_RenderText_Solid(app.font, text.c_str(), {0, 0, 0}); 
     SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
     int text_width = surface->w;
     int text_height = surface->h;

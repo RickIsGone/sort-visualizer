@@ -17,15 +17,13 @@ int main(int argc,char* argv[]){
     srand(time(0));
 
     visualizer app;
-    TTF_Font *font = TTF_OpenFont("calibri.ttf", 30);
     
-    if(!font) std::cout <<TTF_GetError() <<"\n";
-
     while(!app.quit){
+        
         while (SDL_PollEvent(&app.event)){
             app.events();
         }
-        app.draw(font);
+        app.draw();
         
     }
 

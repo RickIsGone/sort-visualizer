@@ -22,7 +22,7 @@ class visualizer{
     
     std::vector<int>array={1,9,3,4,5,6,8,7,2,10,12,11};
     // std::vector<SDL_Rect>numbers;
-
+    
     public:
 
     SDL_Event event;
@@ -30,23 +30,25 @@ class visualizer{
     SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     bool quit=0;
 
+    TTF_Font *font = TTF_OpenFont("calibri.ttf", 30);
+
     int current_algorithm=QUICKSORT;
 
     void events();
 
-    void draw(TTF_Font *font){
+    void draw(){
         
         int offsett=0;
-        if(sdl::button("quicksort",100,100,200,100,60,60,60,renderer,font)) current_algorithm=QUICKSORT;
-        if(sdl::button("bubble sort",100,210,200,100,60,60,60,renderer,font)) current_algorithm=BUBBLESORT;
-        if(sdl::button("insertion sort",100,320,200,100,60,60,60,renderer,font)) current_algorithm=INSERTIONSORT;
-        if(sdl::button("selection sort",100,430,200,100,60,60,60,renderer,font)) current_algorithm=SELECTIONSORT;
-        if(sdl::button("bogosort",100,540,200,100,60,60,60,renderer,font)) current_algorithm=BOGOSORT;
-        // if(sdl::button("stalin sort",100,650,200,100,60,60,60,renderer,font)) current_algorithm=STALINSORT;
-        if(sdl::button("miracle sort",100,650,200,100,60,60,60,renderer,font)) current_algorithm=MIRACLESORT;
+        if(sdl::button("quicksort",100,100,200,100,60,60,60,renderer)) current_algorithm=QUICKSORT;
+        if(sdl::button("bubble sort",100,210,200,100,60,60,60,renderer)) current_algorithm=BUBBLESORT;
+        if(sdl::button("insertion sort",100,320,200,100,60,60,60,renderer)) current_algorithm=INSERTIONSORT;
+        if(sdl::button("selection sort",100,430,200,100,60,60,60,renderer)) current_algorithm=SELECTIONSORT;
+        if(sdl::button("bogosort",100,540,200,100,60,60,60,renderer)) current_algorithm=BOGOSORT;
+        // if(sdl::button("stalin sort",100,650,200,100,60,60,60,renderer)) current_algorithm=STALINSORT;
+        if(sdl::button("miracle sort",100,650,200,100,60,60,60,renderer)) current_algorithm=MIRACLESORT;
 
-        if(sdl::button("shuffle",400,100,200,100,60,60,60,renderer,font)) shuffle(array,array.size());
-        if(sdl::button("start",400,200,200,100,60,60,60,renderer,font)){
+        if(sdl::button("shuffle",400,100,200,100,60,60,60,renderer)) shuffle(array,array.size());
+        if(sdl::button("start",400,200,200,100,60,60,60,renderer)){
             switch(current_algorithm){
                 case QUICKSORT:
                     quickSort(array, 0, array.size() - 1);
