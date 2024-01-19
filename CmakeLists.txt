@@ -3,22 +3,16 @@ project(sort_visualizer VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 17)
 include(CTest)
 enable_testing()
-file(GLOB SOURCES   main.cpp 
-                    input.cpp 
-                    sorting.cpp
-                    sdl_functions.cpp)
+# file(GLOB SOURCES   main.cpp input.cpp sorting.cpp sdl_functions.cpp)
 
-file (GLOB HEADERS  class.hpp
-                    sdl_functions.hpp)
+# file (GLOB HEADERS  class.hpp sorting.hpp sdl_functions.hpp)
 
-add_executable(sort_visualizer  ${SOURCES} ${HEADERS} calibri.ttf) #WIN32
+add_executable(sort_visualizer calibri.ttf main.cpp input.cpp sorting.cpp sdl_functions.cpp class.hpp sdl_functions.hpp) #WIN32
 
 find_package(SDL2 REQUIRED)
-find_package(SDL2_image REQUIRED)
 find_package(SDL2_ttf REQUIRED)
-find_package(SDL2_mixer REQUIRED)
 
-target_link_libraries(sort_visualizer PRIVATE SDL2::SDL2 SDL2::SDL2main SDL2_image::SDL2_image SDL2_ttf::SDL2_ttf SDL2_mixer::SDL2_mixer)
+target_link_libraries(sort_visualizer PRIVATE SDL2::SDL2 SDL2::SDL2main SDL2_ttf::SDL2_ttf )
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

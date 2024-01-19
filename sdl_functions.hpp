@@ -8,7 +8,7 @@ struct MouseState {
 }extern mouseState;
 
 
-
+TTF_Font*font = TTF_OpenFont("calibri.ttf", 30);
 
 namespace sdl{
 

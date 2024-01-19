@@ -3,7 +3,6 @@
 #include <sdl_ttf.h>
 #include <vector>
 #include "sdl_functions.hpp"
-#include "sorting.hpp"
 
 // void shuffle(std::vector<int>&a, int n);
 enum algorithms{
@@ -22,6 +21,17 @@ class visualizer{
     
     std::vector<int>array={1,9,3,4,5,6,8,7,2,10,12,11};
     // std::vector<SDL_Rect>numbers;
+    bool isSorted(std::vector<int> &a, int n);
+    void shuffle(std::vector<int> &a, int n);
+    int partition(std::vector<int> &arr, int low, int high);
+    void quickSort(std::vector<int> &arr, int low, int high);
+    void bogoSort(std::vector<int> &a, int n);
+    void miracleSort(std::vector<int> &a, int n);
+    void stalinSort(std::vector<int> &a, int& n);
+    void insertionSort(std::vector<int> &arr, int n);
+    void bubbleSort(std::vector<int> &arr, int n);
+    void selectionSort(std::vector<int> &arr, int n);
+
     
     public:
 
@@ -30,7 +40,7 @@ class visualizer{
     SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     bool quit=0;
 
-    TTF_Font *font = TTF_OpenFont("calibri.ttf", 30);
+    
 
     int current_algorithm=QUICKSORT;
 
@@ -99,5 +109,3 @@ class visualizer{
     }
 
 }extern app;
-
-

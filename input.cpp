@@ -1,6 +1,5 @@
 #include <SDL.h>
 #include "class.hpp"
-#include "sdl_functions.hpp"
 
 void visualizer::events(){
 
