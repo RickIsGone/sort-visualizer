@@ -14,7 +14,7 @@ int main(int argc,char* argv[]){
 
     visualizer app;
 
-    
+    TTF_Font* font = TTF_OpenFont("calibri.ttf", 30);
     
     
     while(!app.quit){
@@ -22,9 +22,9 @@ int main(int argc,char* argv[]){
         while (SDL_PollEvent(&app.event)){
             app.events();
         }
-        app.draw();
+        app.draw(font);
         
     }
-
+    
     return EXIT_SUCCESS;
 }

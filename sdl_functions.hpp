@@ -8,7 +8,7 @@ struct MouseState {
 }extern mouseState;
 
 
-TTF_Font*font = TTF_OpenFont("calibri.ttf", 30);
+
 
 namespace sdl{
 
@@ -20,7 +20,7 @@ namespace sdl{
     * \param x,y the screen coordinates to place the text 
     * \param renderer the renderer
     */
-    void quick_text(std::string writing, Uint8 r,Uint8 g,Uint8 b,int x,int y,SDL_Renderer* renderer);
+    void quick_text(std::string writing, Uint8 r,Uint8 g,Uint8 b,int x,int y,SDL_Renderer* renderer, TTF_Font *font);
 
 
     /** 
@@ -31,7 +31,7 @@ namespace sdl{
     * \param y the height to place the text in screen coordinates
     * \param renderer the renderer
     */
-    void v_quick_text(std::string writing,int var, Uint8 r,Uint8 g,Uint8 b,int y,SDL_Renderer* renderer);
+    void v_quick_text(std::string writing,int var, Uint8 r,Uint8 g,Uint8 b,int y,SDL_Renderer* renderer, TTF_Font *font);
 
     /** 
     * creates a button 
@@ -42,7 +42,7 @@ namespace sdl{
     * \param renderer the renderer
     * \return true if the button is pressed, false if not 
     */
-    bool button(std::string text, int x,int y,int width, int height,Uint8 r,Uint8 g,Uint8 b,SDL_Renderer* renderer);
+    bool button(std::string text, int x,int y,int width, int height,Uint8 r,Uint8 g,Uint8 b,SDL_Renderer* renderer, TTF_Font *font);
 }
 
 // updates the mouse's x,y and leftbutton state
