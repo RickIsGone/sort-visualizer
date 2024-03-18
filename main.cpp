@@ -1,7 +1,4 @@
-#include <iostream>
 #include <ctime>
-#include <SDL.h>
-#include <SDL_ttf.h> 
 #include <SDL_main.h>
 #include "class.hpp"
 #include "sdl_functions.hpp"

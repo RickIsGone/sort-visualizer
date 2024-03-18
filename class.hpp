@@ -19,11 +19,11 @@ class visualizer{
 
     SDL_Window *window=SDL_CreateWindow("sort visualizer",SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,1600,900,SDL_WINDOW_ALLOW_HIGHDPI);
     
-    std::vector<int>array={1,9,3,4,5,6,8,7,2,10,12,11};
+    std::vector<int>array={2,4,7,1,3,5,6};
     // std::vector<SDL_Rect>numbers;
 
-    bool isSorted(std::vector<int> &a, int n, TTF_Font* font);
-    void shuffle(std::vector<int> &a, int n, TTF_Font* font);
+    bool isSorted(std::vector<int> &a, int n);
+    void shuffle(std::vector<int> &a, int n);
     int partition(std::vector<int> &arr, int low, int high, TTF_Font* font);
     void quickSort(std::vector<int> &arr, int low, int high, TTF_Font* font);
     void bogoSort(std::vector<int> &a, int n, TTF_Font* font);
@@ -33,7 +33,7 @@ class visualizer{
     void bubbleSort(std::vector<int> &arr, int n, TTF_Font* font);
     void selectionSort(std::vector<int> &arr, int n, TTF_Font* font);
 
-    bool IsBeingSorted=0;
+    bool isBeingSorted=0,resizing=0;
 
     public:
 
@@ -48,8 +48,12 @@ class visualizer{
 
     void events();
 
-    void draw(TTF_Font *font){
-        
+    void draw(TTF_Font* font){
+    
+        while (SDL_PollEvent(&event)){
+            events();
+        }
+
         int offsett=0;
         if(sdl::button("quicksort",100,100,200,100,60,60,60,renderer,font)) current_algorithm=QUICKSORT;
         if(sdl::button("bubble sort",100,210,200,100,60,60,60,renderer,font)) current_algorithm=BUBBLESORT;
@@ -59,15 +63,15 @@ class visualizer{
         // if(sdl::button("stalin sort",100,650,200,100,60,60,60,renderer,font)) current_algorithm=STALINSORT;
         if(sdl::button("miracle sort",100,650,200,100,60,60,60,renderer,font)) current_algorithm=MIRACLESORT;
 
-        if(sdl::button("shuffle",400,100,200,100,60,60,60,renderer,font)) shuffle(array,array.size(),font);
+        if(sdl::button("shuffle",400,100,200,100,60,60,60,renderer,font)) if(!isBeingSorted) shuffle(array,array.size());
         if(sdl::button("start",400,210,200,100,60,60,60,renderer,font)){
-            if(!IsBeingSorted){
+            if(!isBeingSorted){
 
-                IsBeingSorted=1;
+                isBeingSorted=1;
                 switch(current_algorithm){
                     case QUICKSORT:
                         quickSort(array, 0, array.size() - 1,font);
-                        IsBeingSorted=0;
+                        isBeingSorted=0;
                         break;
                     
                     case BUBBLESORT:
@@ -88,7 +92,7 @@ class visualizer{
                     
                     case MIRACLESORT:
                         // miracleSort(array,array.size(),font);
-                        IsBeingSorted=0;
+                        isBeingSorted=0;
                         // break;
 
                     default:
@@ -96,13 +100,13 @@ class visualizer{
                 }
             }
         }
-        if(sdl::button("resize",400,320,200,100,60,60,60,renderer,font)){
+        if(sdl::button("resize",400,320,200,100,60,60,60,renderer,font) && !isBeingSorted){
             int size;
             do{
                 std::cout<<"insert the size of the test:\n";
                 std::cin>>size;
-                if(size<0||size>1000) std::cout<<"the size is invalid, ";
-            }while(size<0||size>1000);
+                if(size<0||size>230) std::cout<<"the size is "<<((size>230)? "too big, ":"too small, ");
+            }while(size<0||size>230);
 
             array.clear();
             for(int i=1;i<=size;++i){
