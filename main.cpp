@@ -15,10 +15,8 @@ int main(int argc,char* argv[]){
     
     while(!app.quit){
 
-        while (SDL_PollEvent(&app.event)){
-            app.events();
-        }
-        app.draw(font);
+        
+        app.cicle(font);
         
     }
     

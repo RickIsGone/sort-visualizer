@@ -48,7 +48,7 @@ class visualizer{
 
     void events();
 
-    void draw(TTF_Font* font){
+    void cicle(TTF_Font* font){
     
         while (SDL_PollEvent(&event)){
             events();
