@@ -1,3 +1,5 @@
 # Introduction  
-this is an app made to see visually how multiple sorting algorithms work on an unsorted array 
+this i
 
+
+![A gif that shows how the app works](https://i.imgur.com/H7VeJ4y.gif)
