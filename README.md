@@ -34,12 +34,12 @@ Here i'll be listing every algorithm time complexity, if you want to learn more 
   Best case: O()
   Average case: O()
   Worst case: O()
-
+  
 - ## [Bogo sort]()
   Best case: O()
   Average case: O()
   Worst case: O()
-
+  
 - ## [Miracle sort]()
   Best case: O()
   Average case: O()
