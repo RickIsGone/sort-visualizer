@@ -36,14 +36,14 @@ Here i'll be listing every algorithm time complexity, if you want to learn more 
   Worst case: O(n^2)    
   
 - ## [Bogo sort]()
-  Best case: O()
-  Average case: O()
-  Worst case: O()
+  Best case: O()  
+  Average case: O()  
+  Worst case: O()  
   
 - ## [Miracle sort]()
-  Best case: O()
-  Average case: O()
-  Worst case: O()
+  Best case: O()  
+  Average case: O()  
+  Worst case: O()  
 
 # A video from the app
 ![A video that shows how to app works](sort_visualizer.gif)
