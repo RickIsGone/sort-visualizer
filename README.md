@@ -29,6 +29,10 @@ Here i'll be listing every algorithm time complexity, if you want to learn more 
   Best case: O(n)
   Average case: O(n^2)
   Worst case: O(n^2)
+  
+  Best case: O(n)
+  Average case: O(n^2)
+  Worst case: O(n^2)
 
 - ## [Selection sort]()
   Best case: O()
