@@ -41,7 +41,7 @@ Here i'll be listing every algorithm's time complexity, if you want to learn mor
   Worst case: O(?)  
   
 - ## [Miracle sort](https://www.thecshandbook.com/Miracle_Sort)
-  Miracle sort is a joke algorithm which does nothing, but theoretically, if given infinite time, enough bit flips would occur for the list to sort on its own.
+  Miracle sort is a joke algorithm which does nothing, but theoretically, if given infinite time, enough bit flips would occur for the list to sort on its own.  
   Best case: O(?)  
   Average case: O(?)  
   Worst case: O(?)  
