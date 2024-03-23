@@ -1,5 +1,5 @@
 # Introduction  
-this is an app i made using SDL2 to show how diffrent algorithms sort a list
+this is an app i made using only SDL2 for c++ to show how diffrent algorithms sort a list
 
 # Important note
 The time the app takes to order the list doesn't accurately reflect the algorithm's speed, if you want to know the actual time complexity of the algorithms read [Time complexity](#Time-complexity)
