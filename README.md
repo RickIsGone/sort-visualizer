@@ -13,7 +13,7 @@ The algorithms used in the app are:
 # Time complexity
 
 # Important note
-The time the visualizer takes to order the list doesn't properly rappresent the speed of the algorithm, if you want to see the average time complexity read [Time complexity](#Time-complexity)  
+The time the visualizer takes to order the list doesn't properly rappresent the speed of the algorithm, if you want to know the actual average time complexity read [Time complexity](#Time-complexity)  
 
 # A video from the app
 ![A video that shows how to app works](sort_visualizer.gif)
