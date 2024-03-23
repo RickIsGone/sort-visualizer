@@ -21,12 +21,12 @@ if you want to learn more about each algorithm you can access it by clicking the
   Average case: O(n log n)  
   Worse case: O(n^2)
 
->## [Bubble sort](https://www.geeksforgeeks.org/time-and-space-complexity-analysis-of-bubble-sort/)
->>Best case: O(n)  
-Average case: O(n^2)  
-Worse case: O(n^2)
+- ## [Bubble sort](https://www.geeksforgeeks.org/time-and-space-complexity-analysis-of-bubble-sort/)
+  Best case: O(n)  
+  Average case: O(n^2)  
+  Worse case: O(n^2)
 
->## [Insertion sort](https://www.geeksforgeeks.org/time-and-space-complexity-of-insertion-sort-algorithm/)
+- ## [Insertion sort](https://www.geeksforgeeks.org/time-and-space-complexity-of-insertion-sort-algorithm/)
 
 
 # A video from the app
