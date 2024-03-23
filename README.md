@@ -3,12 +3,12 @@ this is an app i made to show how different sorting algorithms work
 
 # The sorting algorithms  
 The algorithms used in the app are:  
-    * Quick sort
-    * Bubble sort  
-    * Insertion sort
-    * Selection sort
-    * Bogo sort
-    * Miracle sort
+* Quick sort
+* Bubble sort  
+* Insertion sort
+* Selection sort
+* Bogo sort
+* Miracle sort
     
 # Time complexity
 
