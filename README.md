@@ -14,7 +14,8 @@ The algorithms used in the app are:
 * Miracle sort
 
 # Time complexity
-Here i'll be listing every algorithm's time complexity, if you want to learn more about each algorithm you can access it by clicking the algorithm's name 
+Here i'll be listing every algorithm's time complexity, if you want to learn more about each algorithm,  
+you can access it by clicking the algorithm's name 
 - ## [Quick sort](https://www.geeksforgeeks.org/time-and-space-complexity-analysis-of-quick-sort/)
   Best case: O(n log n)  
   Average case: O(n log n)  
