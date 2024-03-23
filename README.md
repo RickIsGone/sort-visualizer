@@ -31,9 +31,9 @@ Here i'll be listing every algorithm time complexity, if you want to learn more 
   Worst case: O(n^2)
 
 - ## [Selection sort](https://www.geeksforgeeks.org/time-and-space-complexity-analysis-of-selection-sort/)
-  Best case: O(n^2)
-  Average case: O(n^2)
-  Worst case: O(n^2)  
+  Best case: O(n^2)  
+  Average case: O(n^2)  
+  Worst case: O(n^2)    
   
 - ## [Bogo sort]()
   Best case: O()
