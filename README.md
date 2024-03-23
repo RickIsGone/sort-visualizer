@@ -1,5 +1,6 @@
-# Introduction  
-this is an app i made using only SDL2 for C++ to show how different algorithms sort a list
+# Sort Visualizer
+Sort Visualizer is an app made with SDL2 in C++ to show how different algorithms sort a list
+![Preview](sort_visualizer.gif)
 
 # Important note
 The time the app takes to order the list doesn't accurately reflect the algorithm's speed, if you want to know the actual time complexity of the algorithms read [Time complexity](#Time-complexity)
@@ -46,5 +47,3 @@ Here i'll be listing every algorithm's time complexity, if you want to learn mor
   Average case: O(?)  
   Worst case: O(?)  
 
-# A video from the app
-![A video that shows how to app works](sort_visualizer.gif)
