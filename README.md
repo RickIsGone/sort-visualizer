@@ -17,9 +17,9 @@ The algorithms used in the app are:
 For each algorithm there are three possible scenarios: best, average and worst; i'll only be listing those three,  
 if you want to learn more about each algorithm you can access it by clicking the algorithm name 
 - ## [Quick sort](https://www.geeksforgeeks.org/time-and-space-complexity-analysis-of-quick-sort/)
-Best case: O(n log n)  
-Average case: O(n log n)  
-Worse case: O(n^2)
+  Best case: O(n log n)  
+  Average case: O(n log n)  
+  Worse case: O(n^2)
 
 >## [Bubble sort](https://www.geeksforgeeks.org/time-and-space-complexity-analysis-of-bubble-sort/)
 >>Best case: O(n)  
