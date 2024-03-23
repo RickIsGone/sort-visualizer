@@ -26,9 +26,9 @@ Here i'll be listing every algorithm time complexity, if you want to learn more 
   Worst case: O(n^2)
 
 - ## [Insertion sort](https://www.geeksforgeeks.org/time-and-space-complexity-of-insertion-sort-algorithm/)
-  Best case: O(n)
-  Average case: O(n^2)
-  Worst case: O(n^2)
+  Best case: O(n)   
+  Average case: O(n^2)   
+  Worst case: O(n^2)   
   
   Best case: O(n)
   Average case: O(n^2)
