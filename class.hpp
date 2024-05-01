@@ -48,89 +48,95 @@ class visualizer{
 
     void events();
 
-    void cicle(TTF_Font* font){
+    void loop(TTF_Font* font){
     
-        while (SDL_PollEvent(&event)){
-            events();
-        }
+        while(!quit){
+            while (SDL_PollEvent(&event)){
+                events();
+            }
 
-        int offsett=0;
-        if(sdl::button("quicksort",100,100,200,100,60,60,60,renderer,font)) current_algorithm=QUICKSORT;
-        if(sdl::button("bubble sort",100,210,200,100,60,60,60,renderer,font)) current_algorithm=BUBBLESORT;
-        if(sdl::button("insertion sort",100,320,200,100,60,60,60,renderer,font)) current_algorithm=INSERTIONSORT;
-        if(sdl::button("selection sort",100,430,200,100,60,60,60,renderer,font)) current_algorithm=SELECTIONSORT;
-        if(sdl::button("bogosort",100,540,200,100,60,60,60,renderer,font)) current_algorithm=BOGOSORT;
-        // if(sdl::button("stalin sort",100,650,200,100,60,60,60,renderer,font)) current_algorithm=STALINSORT;
-        if(sdl::button("miracle sort",100,650,200,100,60,60,60,renderer,font)) current_algorithm=MIRACLESORT;
+            int offsett=0;
+            if(sdl::button("quicksort",100,100,200,100,60,60,60,renderer,font)) current_algorithm=QUICKSORT;
+            if(sdl::button("bubble sort",100,210,200,100,60,60,60,renderer,font)) current_algorithm=BUBBLESORT;
+            if(sdl::button("insertion sort",100,320,200,100,60,60,60,renderer,font)) current_algorithm=INSERTIONSORT;
+            if(sdl::button("selection sort",100,430,200,100,60,60,60,renderer,font)) current_algorithm=SELECTIONSORT;
+            if(sdl::button("bogosort",100,540,200,100,60,60,60,renderer,font)) current_algorithm=BOGOSORT;
+            // if(sdl::button("stalin sort",100,650,200,100,60,60,60,renderer,font)) current_algorithm=STALINSORT;
+            if(sdl::button("miracle sort",100,650,200,100,60,60,60,renderer,font)) current_algorithm=MIRACLESORT;
 
-        if(sdl::button("shuffle",400,100,200,100,60,60,60,renderer,font)) if(!isBeingSorted) shuffle(array,array.size());
-        if(sdl::button("start",400,210,200,100,60,60,60,renderer,font)){
-            if(!isBeingSorted){
+            if(sdl::button("shuffle",400,100,200,100,60,60,60,renderer,font)) if(!isBeingSorted) shuffle(array,array.size());
+            if(sdl::button("start",400,210,200,100,60,60,60,renderer,font)){
+                if(!isBeingSorted){
 
-                isBeingSorted=1;
-                switch(current_algorithm){
-                    case QUICKSORT:
-                        quickSort(array, 0, array.size() - 1,font);
-                        isBeingSorted=0;
-                        break;
-                    
-                    case BUBBLESORT:
-                        bubbleSort(array,array.size(),font);
-                        break;
+                    isBeingSorted=1;
+                    switch(current_algorithm){
+                        case QUICKSORT:
+                            quickSort(array, 0, array.size() - 1,font);
+                            isBeingSorted=0;
+                            break;
 
-                    case INSERTIONSORT:
-                        insertionSort(array,array.size(),font);
-                        break;
+                        case BUBBLESORT:
+                            bubbleSort(array,array.size(),font);
+                            break;
 
-                    case SELECTIONSORT:
-                        selectionSort(array,array.size(),font);
-                        break;
+                        case INSERTIONSORT:
+                            insertionSort(array,array.size(),font);
+                            break;
 
-                    case BOGOSORT:
-                        bogoSort(array,array.size(),font);
-                        break;
-                    
-                    case MIRACLESORT:
-                        // miracleSort(array,array.size(),font);
-                        isBeingSorted=0;
-                        // break;
+                        case SELECTIONSORT:
+                            selectionSort(array,array.size(),font);
+                            break;
 
-                    default:
-                        break;
+                        case BOGOSORT:
+                            bogoSort(array,array.size(),font);
+                            break;
+
+                        case MIRACLESORT:
+                            // miracleSort(array,array.size(),font);
+                            isBeingSorted=0;
+                            // break;
+
+                        default:
+                            break;
+                    }
                 }
             }
-        }
-        if(sdl::button("resize",400,320,200,100,60,60,60,renderer,font) && !isBeingSorted){
-            int size;
-            do{
-                std::cout<<"insert the size of the test:\n";
-                std::cin>>size;
-                if(size<0||size>230) std::cout<<"the size is "<<((size>230)? "too big, ":"too small, ");
-            }while(size<0||size>230);
+            if(sdl::button("resize",400,320,200,100,60,60,60,renderer,font) && !isBeingSorted){
+                int size;
+                do{
+                    std::cout<<"insert the size of the test:\n";
+                    std::cin>>size;
+                    if(size<0||size>230) std::cout<<"the size is "<<((size>230)? "too big, ":"too small, ");
+                }while(size<0||size>230);
 
-            array.clear();
-            for(int i=1;i<=size;++i){
-                array.push_back(i);
+                array.clear();
+                for(int i=1;i<=size;++i){
+                    array.push_back(i);
+                }
             }
-        }
 
-        for(int i:array){
-            SDL_Rect num;
-            num.w=700/array.size();
-            num.h=i*650/array.size();
-            num.y=750-num.h;
-            num.x=700+offsett;
-            offsett+=num.w;
+            for(int i:array){
+                SDL_Rect num;
+                num.w=700/array.size();
+                num.h=i*650/array.size();
+                num.y=750-num.h;
+                num.x=700+offsett;
+                offsett+=num.w;
 
-            if(array[i-1]==i) SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255); 
-            else SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255); 
+                if(array[i-1]==i) SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255); 
+                else SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255); 
 
-            SDL_RenderFillRect(renderer, &num); 
-            SDL_SetRenderDrawColor(renderer, 30, 30, 30, 255);
-            SDL_RenderDrawRect(renderer, &num);
-        }
-        SDL_RenderPresent(renderer);
-        SDL_RenderClear(renderer);
+                SDL_RenderFillRect(renderer, &num); 
+                SDL_SetRenderDrawColor(renderer, 30, 30, 30, 255);
+                SDL_RenderDrawRect(renderer, &num);
+            }
+            SDL_RenderPresent(renderer);
+            SDL_RenderClear(renderer);
+        }   
     }
 
+    visualizer(){
+        TTF_Font* font = TTF_OpenFont("calibri.ttf", 30);
+        loop(font);
+    }
 }extern app;
