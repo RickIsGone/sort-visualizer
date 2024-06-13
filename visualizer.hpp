@@ -4,7 +4,6 @@
 #include <vector>
 #include "sdl_functions.hpp"
 
-// void shuffle(std::vector<int>&a, int n);
 enum algorithms{
     QUICKSORT,
     BUBBLESORT,
