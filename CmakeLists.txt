@@ -1,18 +1,17 @@
 cmake_minimum_required(VERSION 3.28.0)
 project(sort_visualizer VERSION 0.1.0 LANGUAGES C CXX)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 include(CTest)
 enable_testing()
+# set(CMAKE_CXX_SCAN_FOR_MODULES ON)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BUILD_TYPE})
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/debug)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/release)
-
-add_executable(sort_visualizer calibri.ttf main.cpp input.cpp sorting.cpp sdl_functions.cpp class.hpp sdl_functions.hpp) #WIN32
+add_executable(sort_visualizer main.cpp sorting.cpp sdl_functions.cpp visualizer.cpp)
 
 find_package(SDL2 REQUIRED)
 find_package(SDL2_ttf REQUIRED)
-
-target_link_libraries(sort_visualizer PRIVATE SDL2::SDL2 SDL2::SDL2main SDL2_ttf::SDL2_ttf )
+target_link_libraries(sort_visualizer PRIVATE SDL2::SDL2 SDL2::SDL2main SDL2_ttf::SDL2_ttf)
+file(COPY "calibri.ttf" DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

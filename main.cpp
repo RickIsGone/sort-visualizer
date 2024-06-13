@@ -1,6 +1,6 @@
 #include <ctime>
 #include <SDL_main.h>
-#include "class.hpp"
+#include "visualizer.hpp"
 #include "sdl_functions.hpp"
 
 int main(int argc,char* argv[]){
@@ -8,16 +8,13 @@ int main(int argc,char* argv[]){
     TTF_Init();
     srand(time(0));
 
-    visualizer app;
+    Visualizer app;
 
     TTF_Font* font = TTF_OpenFont("calibri.ttf", 30);
     
     
-    while(!app.quit){
-
-        
-        app.cicle(font);
-        
+    while(!app.shouldClose()){
+        app.run(font);
     }
     
     return EXIT_SUCCESS;
