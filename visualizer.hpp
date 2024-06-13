@@ -10,7 +10,6 @@ enum algorithms{
     INSERTIONSORT,
     SELECTIONSORT,
     BOGOSORT,
-    STALINSORT,
     MIRACLESORT
 };
 
@@ -24,7 +23,6 @@ private:
     void quickSort(std::vector<int> &arr, int low, int high, TTF_Font* font);
     void bogoSort(std::vector<int> &a, int n, TTF_Font* font);
     void miracleSort(std::vector<int> &a, int n, TTF_Font* font);
-    // void stalinSort(std::vector<int> &a, int& n, TTF_Font* font);
     void insertionSort(std::vector<int> &arr, int n, TTF_Font* font);
     void bubbleSort(std::vector<int> &arr, int n, TTF_Font* font);
     void selectionSort(std::vector<int> &arr, int n, TTF_Font* font);

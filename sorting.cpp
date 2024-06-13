@@ -59,17 +59,6 @@ void Visualizer::miracleSort(vector<int> &a, int n, TTF_Font* font) {
     }
 }
 
-// void Visualizer::stalinSort(vector<int> &a, int& n, TTF_Font* font) {
-//     int j = 0;
-//     for (int i = 1; i < n; i++) {
-//         if (a[j] <= a[i]) {
-//             j++;
-//             a[j] = a[i];
-//         }
-//     }
-//     n = j + 1;
-// }
-
 void Visualizer::insertionSort(vector<int> &arr, int n, TTF_Font* font){
     int i, key, j;
     for (i = 1; i < n; i++){

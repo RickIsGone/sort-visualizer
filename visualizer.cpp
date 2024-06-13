@@ -11,7 +11,6 @@ void Visualizer::run(TTF_Font* font){
         if(sdl::button("insertion sort",100,320,200,100,60,60,60,renderer,font)) currentAlgorithm = INSERTIONSORT;
         if(sdl::button("selection sort",100,430,200,100,60,60,60,renderer,font)) currentAlgorithm = SELECTIONSORT;
         if(sdl::button("bogosort",100,540,200,100,60,60,60,renderer,font)) currentAlgorithm = BOGOSORT;
-        // if(sdl::button("stalin sort",100,650,200,100,60,60,60,renderer,font)) currentAlgorithm = STALINSORT;
         if(sdl::button("miracle sort",100,650,200,100,60,60,60,renderer,font)) currentAlgorithm = MIRACLESORT;
 
         if(sdl::button("shuffle",400,100,200,100,60,60,60,renderer,font)) if(!m_sorting) shuffle(m_array,m_array.size());
