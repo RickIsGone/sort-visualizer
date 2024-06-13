@@ -43,7 +43,7 @@ void Visualizer::run(TTF_Font* font){
                     case MIRACLESORT:
                         // miracleSort(m_array,m_array.size(),font);
                         m_sorting=0;
-                        // break;
+                        break;
 
                     default:
                         break;
