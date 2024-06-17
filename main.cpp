@@ -8,13 +8,10 @@ int main(int argc,char* argv[]){
     TTF_Init();
     srand(time(0));
 
-    Visualizer app;
-
-    TTF_Font* font = TTF_OpenFont("calibri.ttf", 30);
+    Visualizer app{};
     
-    
-    while(!app.shouldClose()){
-        app.run(font);
+    while(!app.window.shouldClose()){
+        app.run();
     }
     
     return EXIT_SUCCESS;

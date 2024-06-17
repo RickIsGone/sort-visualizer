@@ -1,29 +1,28 @@
 #include "visualizer.hpp"
-using std::vector;
+#include "sorting.hpp"
 
-bool Visualizer::isSorted(vector<int> &a, int n) {
+
+bool Sorter::isSorted(std::vector<int> &a, int n) {
     while (--n > 0){
         if (a[n] < a[n - 1])
             return false;
     }
-    m_sorting = false;
     return true;
 }
 
-void Visualizer::shuffle(std::vector<int> &a, int n) {
+void Sorter::shuffle(std::vector<int> &a, int n) {
     for (int i = 0; i < n; i++){
         std::swap(a[i], a[rand() % n]);
     }
 }
 
-int Visualizer::partition(vector<int> &arr, int low, int high, TTF_Font* font){   
+int Sorter::partition(std::vector<int> &arr, int low, int high){   
     int pivot = arr[high];
     int i = (low - 1);
 
     for (int j = low; j <= high - 1; j++){
-        run(font);
-        if (arr[j] <= pivot)
-        {
+        app.run();
+        if (arr[j] <= pivot){
             i++;
             std::swap(arr[i], arr[j]);
         }
@@ -32,77 +31,70 @@ int Visualizer::partition(vector<int> &arr, int low, int high, TTF_Font* font){
     return (i + 1);
 }
 
-void Visualizer::quickSort(vector<int> &arr, int low, int high, TTF_Font* font){
+void Sorter::quickSort(std::vector<int> &arr, int low, int high){
     
-    if(m_quit) return;
-    if (low < high)
-    {
-        int pivot = partition(arr, low, high,font);
-        quickSort(arr, low, pivot - 1,font);
-        quickSort(arr, pivot + 1, high,font);
+    if(window.shouldClose()) return;
+    if (low < high){
+        int pivot = partition(arr, low, high);
+        quickSort(arr, low, pivot - 1);
+        quickSort(arr, pivot + 1, high);
     }
-    
 }
 
 
-void Visualizer::bogoSort(vector<int> &a, int n, TTF_Font* font) {
-    while (!isSorted(a, n) && !m_quit) {
-        run(font);
+void Sorter::bogoSort(std::vector<int> &a, int n) {
+    while (!isSorted(a, n) && !window.shouldClose()) {
+        app.run();
         shuffle(a,a.size());
     }
 }
 
-void Visualizer::miracleSort(vector<int> &a, int n, TTF_Font* font) {
-    while (!isSorted(a, n) && !m_quit) {
-        run(font);
-        miracleSort(a, n, font);
+void Sorter::miracleSort(std::vector<int> &a, int n) {
+    while (!isSorted(a, n) && !window.shouldClose()) {
+        app.run();
+        miracleSort(a, n);
     }
 }
 
-void Visualizer::insertionSort(vector<int> &arr, int n, TTF_Font* font){
+void Sorter::insertionSort(std::vector<int> &arr, int n){
     int i, key, j;
     for (i = 1; i < n; i++){
         key = arr[i];
         j = i - 1;
 
-        while (j >= 0 && arr[j] > key)
-        {   
-            run(font);
-            if(m_quit) return;
+        while (j >= 0 && arr[j] > key){   
+            app.run();
+            if(window.shouldClose()) return;
             arr[j + 1] = arr[j];
             j = j - 1;
         }
         arr[j + 1] = key;
     }
-    m_sorting = false;
 }
 
-void Visualizer::bubbleSort(vector<int> &arr, int n, TTF_Font* font) {
+void Sorter::bubbleSort(std::vector<int> &arr, int n) {
     int i, j;
     for (i = 0; i < n - 1; i++){
-        run(font);
-        for (j = 0; j < n - i - 1; j++){\
-            run(font);
-            if(m_quit) return;
+        for (j = 0; j < n - i - 1; j++){
+            app.run();
+            if(window.shouldClose()) return;
             if (arr[j] > arr[j + 1])
                 std::swap(arr[j], arr[j + 1]);
         }
     }
-    m_sorting = false;
 }
 
-void Visualizer::selectionSort(vector<int> &arr, int n, TTF_Font* font) {
+void Sorter::selectionSort(std::vector<int> &arr, int n) {
     int i, j, min_idx;
 
     for (i = 0; i < n - 1; i++) {
         min_idx = i;
         for (j = i + 1; j < n; j++){
-            run(font);
-            if(m_quit) return;
+            app.run();
+            if(window.shouldClose()) return;
             if (arr[j] < arr[min_idx])
                 min_idx = j;
         }
         std::swap(arr[min_idx], arr[i]);
     }
-    m_sorting = false;
 }

@@ -3,7 +3,6 @@ project(sort_visualizer VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 20)
 include(CTest)
 enable_testing()
-# set(CMAKE_CXX_SCAN_FOR_MODULES ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BUILD_TYPE})
 
 add_executable(sort_visualizer main.cpp sorting.cpp sdl_functions.cpp visualizer.cpp)
