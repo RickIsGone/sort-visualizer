@@ -10,7 +10,7 @@ add_executable(sort_visualizer main.cpp sorting.cpp sdl_functions.cpp visualizer
 find_package(SDL2 REQUIRED)
 find_package(SDL2_ttf REQUIRED)
 target_link_libraries(sort_visualizer PRIVATE SDL2::SDL2 SDL2::SDL2main SDL2_ttf::SDL2_ttf)
-file(COPY "calibri.ttf" DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
+file(COPY calibri.ttf DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

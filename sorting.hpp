@@ -2,17 +2,18 @@
 
 #include <SDL_ttf.h>
 #include <vector>
+#include <functional>
 
 #include "window.hpp"
 
 class Sorter{
 private:
     bool m_sorting = false;
-    
+    std::function<bool()> stepCallback;
 public:
-    Sorter(Window &window) : window{window}{}
+    Sorter(std::function<bool()> stepCallback): stepCallback(std::move(stepCallback)){}
 
-    Window& window;
+    
     bool isSorting(){ return m_sorting; }
     void beginSorting() { m_sorting = true; }
     void endSorting() { m_sorting = false; }

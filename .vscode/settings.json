@@ -60,6 +60,9 @@
         "set": "cpp",
         "span": "cpp",
         "sstream": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "functional": "cpp",
+        "list": "cpp",
+        "xhash": "cpp"
     }
 }
