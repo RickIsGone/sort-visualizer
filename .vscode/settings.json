@@ -64,5 +64,7 @@
         "functional": "cpp",
         "list": "cpp",
         "xhash": "cpp"
-    }
+    },
+    "C_Cpp.clang_format_style": "file:C:\\Users\\ricca\\Desktop\\.clang-format",
+    "editor.formatOnSave": true
 }
